@@ -15,7 +15,6 @@ class VendingMachineImplTest {
 
     @BeforeEach
     void setUp() {
-        // Initialize with empty product list for basic tests
         List<Product> testProducts = new ArrayList<>();
         vendingMachine = new VendingMachineImpl(testProducts);
     }
@@ -31,5 +30,18 @@ class VendingMachineImplTest {
 
         // Then: balance becomes 10
         assertEquals(10, vendingMachine.getBalance());
+    }
+
+    // Test Case 2 — Reject Invalid Coin
+    @Test
+    void testRejectInvalidCoin() {
+        // Given: balance = 0
+        assertEquals(0, vendingMachine.getBalance());
+
+        // When: insertCoin(7)
+        vendingMachine.insertCoin(7);
+
+        // Then: balance stays 0 (coin is rejected)
+        assertEquals(0, vendingMachine.getBalance());
     }
 }
