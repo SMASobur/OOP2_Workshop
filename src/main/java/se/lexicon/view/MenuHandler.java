@@ -15,6 +15,7 @@ class MenuHandler {
         System.out.println("1. View available products");
         System.out.println("2. Insert the coin");
         System.out.println("3. Purchase a product");
+        System.out.println("4. Check your balance");
         System.out.println("0. ➜] EXIT");
         System.out.print("Choose an option: ");
     }

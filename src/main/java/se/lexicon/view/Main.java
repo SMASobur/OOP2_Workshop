@@ -37,9 +37,12 @@ public class Main {
                 case 3:
                     handlePurchase();
                     break;
+                case 4:
+                    System.out.println("Available Balance: " + machine.getBalance());
+                    break;
                 case 0:
                     int change = machine.returnChange();
-                    //System.out.println("Returning change: " + change + " SEK");
+                    System.out.println("Returning change: " + change + " SEK");
                     System.out.println("...*ੈ✩༺ Goodbye ༻*ੈ✩...");
                     break;
                 default:
