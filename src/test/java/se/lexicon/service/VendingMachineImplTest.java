@@ -72,4 +72,28 @@ class VendingMachineImplTest {
         // Then: quantity becomes 2
         assertEquals(2, product.getQuantity());
     }
+
+    // Test Case 4 — Purchase Fails (Insufficient Balance)
+    @Test
+    void testPurchaseFailsInsufficientBalance() {
+        // Given: product price = 20, balance = 10
+        Product product = testProducts.get(0);
+        assertEquals(20, product.getPrice());
+        int initialQuantity = product.getQuantity();
+
+        vendingMachine.insertCoin(10);
+        assertEquals(10, vendingMachine.getBalance());
+
+        // When: purchaseProduct(productId)
+        Product purchased = vendingMachine.purchaseProduct(1);
+
+        // Then: purchase fails (returns null)
+        assertNull(purchased);
+
+        // Then: balance stays 10
+        assertEquals(10, vendingMachine.getBalance());
+
+        // Then: quantity unchanged
+        assertEquals(initialQuantity, product.getQuantity());
+    }
 }
