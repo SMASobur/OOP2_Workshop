@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.view;
 // This will help to choice the int type value for the menu selection in Main.java
 import java.util.Scanner;
 

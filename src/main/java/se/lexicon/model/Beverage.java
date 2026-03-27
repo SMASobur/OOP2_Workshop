@@ -1,8 +1,8 @@
-package se.lexicon;
+package se.lexicon.model;
 
-public class Fruit extends Product{
+public class Beverage extends Product {
 
-    public Fruit(int id, String name, int price, int quantity) {
+    public Beverage(int id, String name, int price, int quantity) {
         super(id, name, price, quantity);
     }
 

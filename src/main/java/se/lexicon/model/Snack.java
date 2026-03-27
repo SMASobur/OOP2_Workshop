@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.model;
 
 public class Snack extends Product {
     private final boolean isVegan;

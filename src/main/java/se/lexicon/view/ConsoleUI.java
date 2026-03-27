@@ -1,4 +1,4 @@
-package se.lexicon;
+package se.lexicon.view;
 
 public class ConsoleUI {
 }
