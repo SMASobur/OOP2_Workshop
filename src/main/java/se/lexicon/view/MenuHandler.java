@@ -13,7 +13,7 @@ class MenuHandler {
     public void displayMainMenu() {
         System.out.println("\n=== Main Menu ===");
         System.out.println("1. View available products");
-        System.out.println("2. Select a product");
+        System.out.println("2. Insert the coin");
         System.out.println("3. Purchase a product");
         System.out.println("0. ➜] EXIT");
         System.out.print("Choose an option: ");
