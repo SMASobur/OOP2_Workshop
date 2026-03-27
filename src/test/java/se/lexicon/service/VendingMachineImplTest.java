@@ -19,8 +19,8 @@ class VendingMachineImplTest {
         // Initialize with test products
         testProducts = new ArrayList<>();
         testProducts.add(new Beverage(1, "Coca Cola", 20, 3, 330));
-
         testProducts.add(new Beverage(2, "Out of Stock Drink", 15, 0, 500));
+        testProducts.add(new Fruit(3, "Apple", 10, 15, true));
         vendingMachine = new VendingMachineImpl(testProducts);
     }
 
@@ -140,5 +140,19 @@ class VendingMachineImplTest {
 
         // Then: balance becomes 0
         assertEquals(0, vendingMachine.getBalance());
+    }
+
+    // Test Case 7 — Get Products Returns All Items
+    @Test
+    void testGetProductsReturnsAllItems() {
+        // Given: vending machine has 3 products added
+        assertEquals(3, testProducts.size());
+
+        // When: getProducts()
+        List<Product> products = vendingMachine.getProducts();
+
+        // Then: list size is 3
+        assertEquals(3, products.size());
+        assertEquals(testProducts, products);
     }
 }
