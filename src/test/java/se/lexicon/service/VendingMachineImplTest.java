@@ -19,6 +19,8 @@ class VendingMachineImplTest {
         // Initialize with test products
         testProducts = new ArrayList<>();
         testProducts.add(new Beverage(1, "Coca Cola", 20, 3, 330));
+
+        testProducts.add(new Beverage(2, "Out of Stock Drink", 15, 0, 500));
         vendingMachine = new VendingMachineImpl(testProducts);
     }
 
@@ -95,5 +97,29 @@ class VendingMachineImplTest {
 
         // Then: quantity unchanged
         assertEquals(initialQuantity, product.getQuantity());
+    }
+
+    // Test Case 5 — Purchase Fails (Out of Stock)
+    @Test
+    void testPurchaseFailsOutOfStock() {
+        // Given: quantity = 0, balance >= price
+        Product product = testProducts.get(1);
+        assertEquals(0, product.getQuantity());
+        assertEquals(15, product.getPrice());
+
+        vendingMachine.insertCoin(20);
+        assertEquals(20, vendingMachine.getBalance());
+
+        // When: purchaseProduct(productId)
+        Product purchased = vendingMachine.purchaseProduct(2);
+
+        // Then: purchase fails (returns null)
+        assertNull(purchased);
+
+        // Then: balance unchanged
+        assertEquals(20, vendingMachine.getBalance());
+
+        // Then: quantity stays 0
+        assertEquals(0, product.getQuantity());
     }
 }
