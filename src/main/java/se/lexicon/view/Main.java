@@ -29,20 +29,20 @@ public class Main {
 
             switch (choice){
                 case 1:
-                    displayProducts();
+                    handleInsertCoin();
                     break;
                 case 2:
-                    handleInsertCoin();
+                    System.out.println("Available Balance: " + machine.getBalance());;
                     break;
                 case 3:
                     handlePurchase();
                     break;
                 case 4:
-                    System.out.println("Available Balance: " + machine.getBalance());
+                    handleReturnChange();
                     break;
+                case 5:
+                    displayProducts();
                 case 0:
-                    int change = machine.returnChange();
-                    System.out.println("Returning change: " + change + " SEK");
                     System.out.println("...*ੈ✩༺ Goodbye ༻*ੈ✩...");
                     break;
                 default:
@@ -65,6 +65,12 @@ public class Main {
         for (Product p : machine.getProducts()) {
             System.out.println(p.getDescription());
         }
+    }
+    private static void handleReturnChange(){
+        int change = machine.returnChange();
+        if (change<=0){
+            System.out.println("Nothing to Return. Thank You!!");
+        }else System.out.println("Returning change: " + change + " SEK");
     }
 
     private static void handleInsertCoin() {
