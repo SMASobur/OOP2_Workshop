@@ -10,7 +10,7 @@ public class Snack extends Product {
 
     @Override
     public String getDescription() {
-        return String.format("[Snack] ID: %d | %s | Price: %d | Vegan: %b | Left: %d",
+        return String.format("[Snack] ID: %d | %s | Price: %d | Vegan: %b | Stock: %d",
                 getId(), getName(),getPrice(), isVegan, getQuantity());
     }
 }
