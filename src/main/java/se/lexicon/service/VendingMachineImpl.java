@@ -31,6 +31,9 @@ public class VendingMachineImpl implements IVendingMachine {
     }
 
     @Override
+    public int getBalance() { return balance; }
+
+    @Override
     public Product purchaseProduct(int productId) {
         for (Product p : products) {
             if (p.getId() == productId) {
@@ -51,8 +54,7 @@ public class VendingMachineImpl implements IVendingMachine {
         return change;
     }
 
-    @Override
-    public int getBalance() { return balance; }
+
 
     @Override
     public List<Product> getProducts() { return products; }
