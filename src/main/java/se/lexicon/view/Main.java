@@ -42,11 +42,12 @@ public class Main {
                     break;
                 case 5:
                     displayProducts();
+                    break;
                 case 0:
                     System.out.println("...*ੈ✩༺ Goodbye ༻*ੈ✩...");
                     break;
                 default:
-                    System.out.println("Invalid option. Please choose 1-3. 0->Exit.");
+                    System.out.println("Invalid option. Please choose 1-5. 0->Exit.");
             }
         } while (choice!=0);
 
